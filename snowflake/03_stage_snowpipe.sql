@@ -1,0 +1,1 @@
+CREATE STAGE spotify_stage URL='s3://spotify-etl-pipeline-demo/curated/spotify/'; CREATE PIPE spotify_pipe_songs AS COPY INTO SONGS FROM @spotify_stage FILE_FORMAT=(TYPE=CSV SKIP_HEADER=1);
