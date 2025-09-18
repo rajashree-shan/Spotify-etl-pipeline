@@ -39,25 +39,28 @@ This project builds an **end-to-end ETL pipeline** that extracts data from the *
 
 ## Folder Structure
 spotify-etl-pipeline/
-extractor/ # Spotify API extraction code
-lambda_transform/ # AWS Lambda transformation code
-infra/ # Terraform scripts for AWS
-snowflake/ # SQL scripts for Snowflake
-requirements.txt # Python dependencies
-README.md # Project documentation
-.env # Environment variables (local only)
+│
+├── extractor/          # Spotify API extraction code
+├── lambda_transform/   # AWS Lambda transformation code
+├── infra/              # Terraform scripts for AWS
+├── snowflake/           # SQL scripts for Snowflake
+│
+├── requirements.txt     # Python dependencies
+├── README.md            # Project documentation
+└── .env                 # Environment variables (local only)
 
 
 ---
 
 ## Prerequisites
-Spotify Developer App:
-Get SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET from Spotify Developer Dashboard.
-AWS Account with access to S3, Lambda, and IAM.
-Snowflake Account with permissions to create DB, schema, stage, and pipes.
-Terraform installed:
-brew install terraform      # MacOS
-choco install terraform     # Windows
+- Get SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET from the Spotify Developer Dashboard.
+AWS Account
+- Must have permissions for S3, Lambda, and IAM.
+Snowflake Account
+- Requires permissions to create Database, Schema, Stage, and Snowpipe.
+- Terraform Installed :
+MacOS: brew install terraform
+Windows: choco install terraform
 
 
 
@@ -110,7 +113,7 @@ Run SQL scripts in order:
 
 
 ## Project Highlights
-Serverless: No servers to manage, fully event-driven
-Infrastructure as Code: Reproducible AWS setup using Terraform
-Analytics-ready: Snowflake tables with primary/foreign keys for BI dashboards
-Scalable: Add more playlists or pipelines with minimal changes
+- Serverless: No servers to manage, fully event-driven
+- Infrastructure as Code: Reproducible AWS setup using Terraform
+- Analytics-ready: Snowflake tables with primary/foreign keys for BI dashboards
+- Scalable: Add more playlists or pipelines with minimal changes
